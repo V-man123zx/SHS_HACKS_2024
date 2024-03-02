@@ -6,9 +6,11 @@ body {
 }
 
 header {
-	background-color: #808080;
+	background-color: #20242f;
 	padding: 10px;
 	display: flex;
+	position: sticky;
+	top: 0;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -42,6 +44,7 @@ nav a {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	margin-right: 15px;
 }
 
 .signup-signin-btn:hover {
@@ -57,4 +60,8 @@ nav a {
 .page:hover {
 	color: white;
 	text-decoration: underline;
+}
+
+.logo img {
+	background-image: url("https://i.ibb.co/0Fns2z8/generate-an-image-for-a-logo-for-a-nonprofit-called-questify.png");
 }

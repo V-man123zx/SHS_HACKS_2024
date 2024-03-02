@@ -9,9 +9,10 @@
 </head>
 
 <body>
+
 	<div class="container">
 		<h2>Sign Up</h2>
-		<form action="organization.html" method="POST">
+		<form action="/profile/organization.html" method="POST">
 			<div class="form-group">
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
@@ -24,26 +25,37 @@
 				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" required>
 			</div>
-			<div class="checkbox-group">
-				<label for="volunteer">
-					<input type="checkbox" id="volunteer" name="volunteer" onclick="uncheck('organization')"
-						required=false>
-					Volunteer
-				</label>
-				<label for="organization">
-					<input type="checkbox" id="organization" name="organization" onclick="uncheck('volunteer')"
-						required=false>
-					Organization
-				</label>
+			<div class="role">
+				<div>
+					<label for="volunteer">Volunteer</label><br>
+					<input type="radio" id="volunteer" name="role" value="volunteer">
+				</div>
+				<div>
+					<label for="organization">Organization</label>
+					<input type="radio" id="organization" name="role" value="organization">
+				</div>
 			</div>
-			<button type="submit" class="btn">Sign Up</button>
+			<button type="submit" class="btn" onclick="redirect()">Sign Up</button>
+			<a href="../Signin/signin.html" style="margin: auto;">
+				<p style="text-align: center;">
+					Already have an account?
+					Sign in here
+				</p>
+			</a>
 		</form>
 	</div>
 	<script>
 		function uncheck(id) {
 			document.getElementById(id).checked = false;
 		}
+
+		function redirect() {
+			console.log("redirect pressed")
+			// document.location.pathname = "/profile/organization.html"
+		}
+
 	</script>
+
 </body>
 
 </html>

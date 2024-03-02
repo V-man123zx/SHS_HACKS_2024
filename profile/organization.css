@@ -5,6 +5,7 @@
 body,
 html {
 	background-color: #ffffff;
+	min-height: 100vh;
 }
 
 #opportunities-container {
@@ -36,20 +37,35 @@ html {
 	background: linear-gradient(to right, hsl(98, 52%, 76%), hsl(185, 38%, 39%));
 	text-align: center;
 	color: white;
+	margin-block: 5px;
 }
 
-#search-opportunities {
-	margin-left: 10px;
-	width: 50%;
-	height: 15px;
-	padding: 10px;
+#search-container {
+	display: grid;
+	width: max-content;
+	grid-template-columns: max-content max-content;
+	gap: 20px;
+	background-color: white;
+	padding: 4px;
+	border-radius: 6px;
 }
 
-#submit {
-	margin-top: px;
+#submit-button {
+	margin-top: 0;
+	/* Set an appropriate value */
 	height: 35px;
 	width: 35px;
 	background-color: rgb(255, 255, 255);
 	border-radius: 5px;
-	background-image: url(../images/search-icon.png);
+	display: flex;
+	/* or display: grid */
+	justify-content: center;
+	/* Center horizontally */
+	align-items: center;
+	/* Center vertically */
+}
+
+#submit-button img {
+	width: 30px;
+	aspect-ratio: 1 / 1;
 }

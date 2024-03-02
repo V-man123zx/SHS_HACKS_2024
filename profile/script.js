@@ -14,13 +14,13 @@ let op_list = [
 		id: "123",
 		title: "Tutor Middle Schools",
 		hours: "like 2-4 hours per week",
-		description: "here you can tutor people or something"
+		description: "Here you can tutor people or something"
 	},
 	{
 		id: "456",
 		title: "Pick up trash from beach",
 		hours: "1-2 hours",
-		description: "help clean up trash"
+		description: "Help clean up trash"
 	},
 ]; // get this somehow from the user or something
 
