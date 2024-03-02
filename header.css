@@ -2,11 +2,12 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
-	background-color: #EBF5DF;
+	background-color: rgb(228, 234, 228)
 }
 
 header {
-	background-color: #20242f;
+	background-color: #373737;
+	/* width: 100%; */
 	padding: 10px;
 	display: flex;
 	position: sticky;
@@ -55,13 +56,13 @@ nav a {
 .page {
 	font-size: 20px;
 	transition-duration: 250ms;
+	color: white;
 }
 
 .page:hover {
-	color: white;
 	text-decoration: underline;
 }
 
 .logo img {
-	background-image: url("https://i.ibb.co/0Fns2z8/generate-an-image-for-a-logo-for-a-nonprofit-called-questify.png");
+	background-image: url("https://cdn.discordapp.com/attachments/1211830027151351909/1213583207975358464/logo.png?ex=65f60070&is=65e38b70&hm=30710b8deb7b021c282d07358f1fcf203e9382fc0ff417f65eb64bea86d3299f&");
 }

@@ -41,6 +41,7 @@ html {
 }
 
 #search-container {
+	margin: auto;
 	display: grid;
 	width: max-content;
 	grid-template-columns: max-content max-content;

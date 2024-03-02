@@ -14,44 +14,10 @@
 
 	<button onclick="readsheet()">read sheet</button>
 
-	<button onclick="updatesheet()">update sheet</button>
+	<button onclick="sheetsdb_signin()">update sheet</button>
 
 
-	<script>
-
-
-
-		function readsheet() {
-
-			console.log("hey");
-
-
-			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks')
-
-				.then((response) => response.json())
-				.then((data) => console.log(data));
-
-		}
-
-		function updatesheet() {
-			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks' + '/Name/', {
-				method: 'PATCH',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					data: {
-						'name': "Emma"
-					}
-				})
-			})
-				.then((response) => response.json())
-				.then((data) => console.log(data));
-
-
-		}
-	</script>
+	<script src="Backend_funcs.js"></script>
 </body>
 
 </html>

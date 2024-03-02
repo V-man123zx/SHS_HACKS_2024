@@ -9,10 +9,9 @@
 </head>
 
 <body>
-
 	<div class="container">
 		<h2>Sign Up</h2>
-		<form action="/profile/organization.html" method="POST">
+		<form>
 			<div class="form-group">
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
@@ -35,7 +34,7 @@
 					<input type="radio" id="organization" name="role" value="organization">
 				</div>
 			</div>
-			<button type="submit" class="btn" onclick="redirect()">Sign Up</button>
+			<button class="btn" onclick="sheetsdb_signin()">Sign Up</button>
 			<a href="../Signin/signin.html" style="margin: auto;">
 				<p style="text-align: center;">
 					Already have an account?
@@ -45,13 +44,45 @@
 		</form>
 	</div>
 	<script>
+
+		function sheetsdb_signin() {
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let password = document.getElementById("password").value;
+			let type;
+			if (document.getElementById("volunteer").checked == true) { type = "VOL" }
+			else if (document.getElementById("organization").checked == true) { type = "ORG" }
+
+			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					data: [
+						{
+							'id': "INCREMENT",
+							'Name': name,
+							'Email': email,
+							'Password': password,
+							'Type': type
+						}
+					]
+				})
+			})
+				.then((response) => response.json())
+				.then((data) => { console.log(data); redirect() });
+
+		}
+
 		function uncheck(id) {
 			document.getElementById(id).checked = false;
 		}
 
 		function redirect() {
 			console.log("redirect pressed")
-			// document.location.pathname = "/profile/organization.html"
+			document.location.pathname = "/opportunities/organization.html"
 		}
 
 	</script>

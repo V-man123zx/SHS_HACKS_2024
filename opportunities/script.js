@@ -12,16 +12,23 @@ const submitForm = () => {
 let op_list = [
 	{
 		id: "123",
-		title: "Tutor Middle Schools",
-		hours: "like 2-4 hours per week",
-		description: "Here you can tutor people or something"
+		title: "Tutor Middle Schoolers",
+		hours: "2-4 hours per week",
+		description: "Tutor students for education"
 	},
 	{
 		id: "456",
-		title: "Pick up trash from beach",
+		title: "Make Advertisement Video for UNICEF",
 		hours: "1-2 hours",
-		description: "Help clean up trash"
+		description: "Spread awareness"
 	},
+	{
+		id: "789",
+		title:"Improve Website for UNICEF",
+		hours: "5 hours",
+		description: "Spread awareness"
+	}
+
 ]; // get this somehow from the user or something
 
 op_list.forEach(op => {
