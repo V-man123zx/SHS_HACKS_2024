@@ -1,0 +1,55 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+	background-color: #ffffff;
+}
+
+#opportunities-container {
+	margin-top: 50px;
+	display: grid;
+	width: 100%;
+	place-items: center;
+}
+
+#search-opportunities {
+	border-radius: 2rem;
+	outline: none;
+	border: none;
+	font-size: 24px;
+}
+
+#opportunities-list {
+	display: grid;
+	grid-auto-flow: row;
+	grid-gap: 10px;
+	width: 80%
+}
+
+.opportunity {
+	text-decoration: none;
+	width: 100%;
+	border-radius: 15px;
+	/* background-color: rgb(60, 138, 71); */
+	background: linear-gradient(to right, hsl(98, 52%, 76%), hsl(185, 38%, 39%));
+	text-align: center;
+	color: white;
+}
+
+#search-opportunities {
+	margin-left: 10px;
+	width: 50%;
+	height: 15px;
+	padding: 10px;
+}
+
+#submit {
+	margin-top: px;
+	height: 35px;
+	width: 35px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	background-image: url(../images/search-icon.png);
+}
