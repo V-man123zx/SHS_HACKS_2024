@@ -14,7 +14,7 @@
 }
 
 .form-group {
-	margin-bottom: 15px;
+	margin-bottom: 50px;
 }
 
 .form-group label {
@@ -36,4 +36,8 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+textarea {
+	resize: none;
 }

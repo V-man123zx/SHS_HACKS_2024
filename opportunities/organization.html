@@ -11,13 +11,15 @@
 </head>
 
 <body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">⬆</button>
+
 	<header>
 		<a href="../home/home.html"><img src="https://i.ibb.co/rGg0cJd/Untitled-design.png" alt="Logo" class="logo"></a>
 		<nav>
 			<a class="page" href="../opportunities/organization.html">Opportunities</a>
 			<a class="page" href="../User_Profile/profile.html">Profile</a>
-			<a class="page" href="#">Leaderboard</a>
-			<a class="page" href="#">Organization</a>
+			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
+			<a class="page" href="../organization/organization.html">Organization</a>
 		</nav>
 		<a href="../sign-up/signUp.html">
 			<button class="signup-signin-btn">Sign Up / Sign In</button>
@@ -25,12 +27,11 @@
 	</header>
 	<br>
 
-	<h1>Search for opportunities</h1>
+	<h1 style="margin-left: 50px">Search for opportunities</h1>
 	<form id="search">
 		<div id="search-container">
 			<input id="search-opportunities">
-			<button onclick="submitForm()" id="submit-button" , style="cursor: pointer;">
-				<img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" alt="">
+			<img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png" alt="">
 			</button>
 		</div>
 	</form>
@@ -38,6 +39,7 @@
 
 	<div id="opportunities-container">
 		<div id="opportunities-list"></div>
+	</div>
 </body>
 
 </html>

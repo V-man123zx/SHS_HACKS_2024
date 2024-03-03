@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h2>Sign Up</h2>
-		<form>
+		<form onsubmit="sheetsdb_signin()">
 			<div class="form-group">
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
@@ -34,7 +34,7 @@
 					<input type="radio" id="organization" name="role" value="organization">
 				</div>
 			</div>
-			<button class="btn" onclick="sheetsdb_signin()">Sign Up</button>
+			<button type="submit" class="btn">Sign Up</button>
 			<a href="../Signin/signin.html" style="margin: auto;">
 				<p style="text-align: center;">
 					Already have an account?
@@ -46,12 +46,13 @@
 	<script>
 
 		function sheetsdb_signin() {
+			console.log("efefe")
 			let name = document.getElementById("name").value;
 			let email = document.getElementById("email").value;
 			let password = document.getElementById("password").value;
 			let type;
-			if (document.getElementById("volunteer").checked == true) { type = "VOL" }
-			else if (document.getElementById("organization").checked == true) { type = "ORG" }
+			if (document.getElementById("volunteer").checked) { type = "VOL" }
+			else if (document.getElementById("organization").checked) { type = "ORG" }
 
 			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {
 				method: 'POST',

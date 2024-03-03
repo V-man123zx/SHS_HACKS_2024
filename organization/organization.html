@@ -7,24 +7,63 @@
 	<title>Questify</title>
 	<link rel="favicon" href="https://i.ibb.co/rGg0cJd/Untitled-design.png">
 	<link rel="stylesheet" href="../header.css">
-	<link rel="stylesheet" href="./home-stylesheet.css">
+	<link rel="stylesheet" href="./organization-stylesheet.css">
 </head>
 
 <body>
 	<header>
-		<img href="../home/home.html" src="https://i.ibb.co/rGg0cJd/Untitled-design.png" alt="Logo" class="logo">
+		<a href="../home/home.html">
+			<img src="https://i.ibb.co/rGg0cJd/Untitled-design.png" alt="Logo" class="logo">
+		</a>
 		<nav>
 			<a class="page" href="../opportunities/organization.html">Opportunities</a>
 			<a class="page" href="../User_Profile/profile.html">Profile</a>
-			<a class="page" href="#">Leaderboard</a>
-			<a class="page" href="#">Organization</a>
+			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
+			<a class="page" href="../organization/organization.html">Organization</a>
 		</nav>
 		<a href="../sign-up/signUp.html">
 			<button class="signup-signin-btn">Sign Up / Sign In</button>
 		</a>
 
 	</header>
+	<br>
+	<div style="margin-left: 50px">
+		<h2 id="heading">This is where you can post an opportunity for volunteers to join</h2>
+		<p>Please keep expactations reasonable, keep in mind that volunteers are not compensated for their work!
+	</div>
+
+	<p>
+		<br>
+		<br>
+
+	<div id="formContainer">
+		<h2 id="formHead">Sign up:</h2>
+		<form id="form" action="#" method="post">
+			<label for="opportunityName">Opportunity Name:</label>
+			<input type="text" id="opportunityName" name="opportunityName" required>
+
+			<label for="skills">Skills Required:</label>
+			<input type="text" id="skills" name="skills" required>
+
+			<label for="hours">Estimated Hours:</label>
+			<input type="number" id="hours" name="hours" required>
+
+			<label for="description">Description/Request:</label>
+			<textarea id="description" name="description" rows="4" required></textarea>
+
+			<label for="difficulty">Difficulty Rating:</label>
+			<select id="difficulty" name="difficulty">
+				<option value="easy">Easy</option>
+				<option value="medium">Medium</option>
+				<option value="hard">Hard</option>
+			</select>
+
+			<button type="submit">Submit</button>
+		</form>
+	</div>
 
 </body>
+
+
 
 </html>

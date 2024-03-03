@@ -38,3 +38,23 @@ function sheetsdb_signin() {
 
 }
 
+function searchname(name) {
+
+    fetch(`https://sheetdb.io/api/v1/d6omx04jpy6ks/search?Name=${name}`)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+
+
+}
+
+function searchemail(email) {
+
+    fetch(`https://sheetdb.io/api/v1/d6omx04jpy6ks/search?Email=${email}`)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
+
+
+}
+

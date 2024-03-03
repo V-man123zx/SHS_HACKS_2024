@@ -16,7 +16,7 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -32,15 +32,34 @@ body {
 	margin-top: 20px;
 }
 
-.image-container {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 20px;
-}
-
 .image {
 	max-width: 100%;
 	height: auto;
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+	animation: 800ms ease-out forwards fade;
+	overflow-y: hidden;
+}
+
+.fade-in2 {
+	opacity: 0;
+	transform: translateY(100px);
+	animation: 800ms ease-out 200ms forwards fade;
+	overflow-y: hidden;
+
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
