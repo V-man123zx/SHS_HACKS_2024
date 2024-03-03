@@ -75,7 +75,7 @@ const myFunc = (data) => {
 		<a href="/volunteer_info/info.html?id=${op.id}">
 			<div id="op-${index}" class="opportunity fade-in">
 				<h1>${op.Organization}</h1>
-				<h2>Name: ${op.Name} hours</h2>
+				<h2>Name: ${op.Name}</h2>
 				<h2>Hours: ${op.Hours} hours</h2>
 				<p>Difficulty Level: ${op.Difficulty}</p>
 				<p>Required Skills: ${op.Skills}</p>
