@@ -1,8 +1,50 @@
 const opportunitiesList = document.getElementById("opportunities-list")
 const searchElement = document.getElementById("search-opportunities");
+let searchTerm = "something";
+
+let globalOps;
 
 searchElement.addEventListener("keydown", (e) => {
-	console.log("test", e)
+	searchTerm = searchElement.value;
+
+	const filteredData1 = globalOps.filter(item => item.Organization.includes(searchTerm));
+	const filteredData2 = globalOps.filter(item => item.Name.includes(searchTerm));
+	const filteredData3 = globalOps.filter(item => item.Skills.includes(searchTerm));
+	const filteredData4 = globalOps.filter(item => item.Hours.includes(searchTerm));
+	const filteredData5 = globalOps.filter(item => item.Difficulty.includes(searchTerm));
+	const totalData = [...filteredData1, ...filteredData2, ...filteredData3, ...filteredData4,...filteredData5];
+
+	const uniqueArray = totalData.filter((item, index, arr) => {
+    return arr.findIndex(obj => obj.id === item.id) === index;
+	});
+	console.log(uniqueArray)
+
+	opportunitiesList.innerHTML =	""
+
+	uniqueArray.forEach((op, index) => {
+		console.log(op.Organization);
+		opportunitiesList.innerHTML += `
+			<div onclick="openOpp(${op})" id="op-${index}" class="opportunity fade-in">
+				<h1>${op.Organization}</h1>
+				<h2>Name: ${op.Name} hours</h2>
+				<h2>Hours: ${op.Hours} hours</h2>
+				<p>Difficulty Level: ${op.Difficulty}</p>
+				<p>Required Skills: ${op.Skills}</p>
+				<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
+			</div>
+		`;
+
+		document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
+
+		// Add event listener to each opportunity container to display message on hover
+		document.getElementById(`op-${index}`).addEventListener('mouseover', () => {
+			document.getElementById(`op-${index}`).classList.add('hovered');
+		});
+	
+		document.getElementById(`op-${index}`).addEventListener('mouseout', () => {
+			document.getElementById(`op-${index}`).classList.remove('hovered');
+		});
+	});
 })
 
 const submitForm = () => {
@@ -19,14 +61,15 @@ const myFunc = (data) => {
 	allOpps = data;
 
 	let op_list = allOpps;
+	globalOps = op_list;
 
 	console.log("test log", op_list);
+
 
 	op_list.forEach((op, index) => {
 		console.log(op.Organization);
 		opportunitiesList.innerHTML += `
-		<a class="opp" href="../volunteer_info/info.html">
-			<div id="op-${index}" class="opportunity fade-in" >
+			<div onclick="openOpp(${op})" id="op-${index}" class="opportunity fade-in">
 				<h1>${op.Organization}</h1>
 				<h2>Name: ${op.Name} hours</h2>
 				<h2>Hours: ${op.Hours} hours</h2>
@@ -34,7 +77,6 @@ const myFunc = (data) => {
 				<p>Required Skills: ${op.Skills}</p>
 				<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
 			</div>
-		</a>
 		`;
 
 		document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
@@ -49,6 +91,10 @@ const myFunc = (data) => {
 		});
 	});
 }
+
+const openOpp = (op) => {
+	console.log("open", op)
+} 
 
 
 
