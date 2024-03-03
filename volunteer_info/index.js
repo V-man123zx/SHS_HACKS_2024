@@ -16,7 +16,7 @@ function submitLink() {
 
     console.log(parseInt(user_data.Hours), parseInt(Opportunity[0].Hours))
 
-    fetch('https://sheetdb.io/api/v1/jm4i51saoegqh/Name/'+user_data.Name, {
+    fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq/Name/'+user_data.Name, {
 		method: 'PATCH',
 		headers: {
 			'Accept': 'application/json',
@@ -32,7 +32,7 @@ function submitLink() {
 		.then((response) => response.json())
 		.then((data) => console.log(data));
     
-	fetch('https://sheetdb.io/api/v1/jm4i51saoegqh/id/'+oppIdToFetch, {
+	fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq/id/'+oppIdToFetch, {
 		method: 'PATCH',
 		headers: {
 			'Accept': 'application/json',
@@ -53,7 +53,7 @@ function submitLink() {
 }
 
 const fetchData = () => {
-	fetch(`https://sheetdb.io/api/v1/jm4i51saoegqh/search?sheet=Opportunities&id=${oppIdToFetch}`)
+	fetch(`https://sheetdb.io/api/v1/np6bcxlf3zgdq/search?sheet=Opportunities&id=${oppIdToFetch}`)
 		.then((response) => response.json())
 		.then((data) => {
         console.log("testasfdsfsadf", data)

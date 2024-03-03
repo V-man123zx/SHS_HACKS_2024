@@ -1,5 +1,5 @@
 function readsheet() {
-    fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks')
+    fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq')
         .then((response) => response.json())
         .then((data) => console.log(data));
 }
@@ -10,7 +10,7 @@ function sheetsdb_signin() {
     let password = "TEST";
     let type = "ORG";
     
-    fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {
+    fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

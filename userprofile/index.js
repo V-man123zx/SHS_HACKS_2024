@@ -22,7 +22,7 @@ function submitbio() {
 	localStorage.setItem("signedIn", JSON.stringify(currlocal));
 
 
-	fetch('https://sheetdb.io/api/v1/jm4i51saoegqh/Email/'+JSON.parse(localStorage.getItem("signedIn")).Email, {
+	fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq/Email/'+JSON.parse(localStorage.getItem("signedIn")).Email, {
 		method: 'PATCH',
 		headers: {
 			'Accept': 'application/json',
@@ -61,7 +61,7 @@ function getUserData() {
 	// console.log(userEmail);
 	
 
-	// fetch('https://sheetdb.io/api/v1/jm4i51saoegqh/search?Email='+userEmail)
+	// fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq/search?Email='+userEmail)
 	// .then((response) => response.json())
 	// .then((data) => {
 	// console.log(data); 

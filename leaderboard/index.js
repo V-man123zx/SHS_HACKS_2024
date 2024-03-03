@@ -34,7 +34,7 @@ const temp = [
 
 const setLeaderboardInfo = () => {
     
-    fetch("https://sheetdb.io/api/v1/jm4i51saoegqh")
+    fetch("https://sheetdb.io/api/v1/np6bcxlf3zgdq")
     .then((response) => response.json())
     .then((data) => {
             const leaderboardGridEl = document.getElementById("leaderboard-grid");

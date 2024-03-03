@@ -53,7 +53,7 @@ const submitForm = () => {
 
 const fetchData = () => {
 	console.log("test")
-	fetch('https://sheetdb.io/api/v1/jm4i51saoegqh?sheet=Opportunities')
+	fetch('https://sheetdb.io/api/v1/np6bcxlf3zgdq?sheet=Opportunities')
 		.then((response) => response.json())
 		.then((data) => myFunc(data));
 }
