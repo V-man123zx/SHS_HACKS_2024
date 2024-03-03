@@ -48,10 +48,17 @@ const setLeaderboardInfo = () => {
     //      });
     // });
 
-
+    const leaderboardPodiumEl = document.getElementById("leaderboard-podium");
+    [tempLeaderboardInfo[0], tempLeaderboardInfo[1], tempLeaderboardInfo[2]].forEach((el, index) => {
+        leaderboardPodiumEl.innerHTML += `
+        <div id="lbpodium-${index}" class="leaderboard-row">
+        <span>${el.Name}</span>
+        </div>
+        `
+    })
+   
     const leaderboardGridEl = document.getElementById("leaderboard-grid");
-
-    tempLeaderboardInfo.forEach((el, index) => {
+    tempLeaderboardInfo.slice(2).forEach((el, index) => {
         leaderboardGridEl.innerHTML += `
         <div class="leaderboard-row">
         <span>${el.Name}</span>

@@ -1,56 +1,95 @@
-.leaderboard {
-	width: 80%;
-	margin: auto;
-	border-collapse: collapse;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-	background-color: #ffffff;
-}
-
-.leaderboard th,
-.leaderboard td {
-	border: 1px solid #dee2e6;
-	padding: 10px;
-	text-align: left;
-}
-
-.leaderboard th {
-	background-color: #007bff;
-	color: #ffffff;
-	text-transform: uppercase;
-}
-
-.leaderboard tr:nth-child(even) {
-	background-color: #f8f9fa;
-}
-
-.leaderboard tr:hover {
-	background-color: #e9ecef;
-}
-
-.leaderboard .top-three {
-	font-weight: bold;
-}
-
-.leaderboard .first-place {
-	background-color: #ffc107;
-	/* Yellow */
-	font-size: 20px;
-}
-
-.leaderboard .second-place {
-	background-color: #6c757d;
-	/* Gray */
-	color: #ffffff;
-	font-size: 18px;
-}
-
-.leaderboard .third-place {
-	background-color: #dc3545;
-	/* Red */
-	color: #ffffff;
-	font-size: 16px;
-}
-
 #leaderboard-grid {
+	border-radius: 5px;
+	background-color: aliceblue;
 	display: grid;
+	margin: auto;
+	width: 80%;
+}
+
+.fade-in {
+	opacity: 0;
+	transform: translateY(60px);
+	animation: 800ms ease-out 100ms forwards fade;
+	overflow-y: hidden;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#leaderboard-grid div:nth-child(o) {
+	background-color: lightgrey;
+}
+
+#leaderboard-grid div:nth-child(even) {
+	background-color: gray;
+}
+
+#leaderboard-grid div:nth-child(1) {
+	background-color: gold;
+	border-radius: 5px;
+	font-size: 30px;
+	
+	border-radius: 0.5rem;
+	position:relative;
+	image: url("https://i.ibb.co/9pk9RNX/Designer-removebg-preview.png");
+}
+
+#leaderboard-grid div:nth-child(1)::before(1),
+#leaderboard-grid div:nth-child(1)::after{
+	filter: blur(3.5rem)
+
+	content:"";
+	inset: 0;
+	position:absolute;
+	background:var(--clr-5);
+	background: linear-gradient(
+		var(--gradient-angle)
+		var(--clr-3),
+		var(--clr-4),
+		var(--clr-5));
+	animation: rotation 20s linear infinite;
+	/* border-radius: inherit; */
+}
+
+@keyframes rotation{
+	0% { --gradient-angle:0deg;}
+	100% {--gradient-angle:360deg;}
+}
+
+
+#leaderboard-grid div:nth-child(2) {
+	background-color: silver;
+	border-radius: 5px;
+	font-size: 30px;
+}
+
+#leaderboard-grid div:nth-child(3) {
+	background-color: rgb(190, 131, 20);
+	border-radius: 5px;
+	font-size: 30px;
+}
+
+:root{
+	--clr-1: blue;
+	--clr-2: rgb(76, 0, 255);
+	--clr-2: rgb(79, 0, 111);
+	--clr-3: rgb(255, 0, 200);
+	--clr-4: rgb(117, 5, 192);
+	--clr-5: rgb(0, 102, 255);
+	/* --clr-6: blue;
+	--clr-7: rgb(0, 162, 255); */
+}
+
+#leaderboard-grid div{
+	margin-left: 10px;
+	margin-right:10px;
 }

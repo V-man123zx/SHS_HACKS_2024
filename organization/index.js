@@ -1,23 +1,29 @@
 function submitOpp(e) {
 	e.preventDefault();
+
+
+	if (localStorage.getItem("signedIn") == null || JSON.parse(localStorage.getItem("signedIn")).Type != "ORG") {
+		alert("Please sign into organization account.");
+		return;
+	}
+
+
 	const oppName = document.getElementById("opportunityName").value;
 	const skillsReq = document.getElementById("skills").value;
 	const numHours = document.getElementById("hours").value;
 	const description = document.getElementById("description").value;
 	const difficulty = document.getElementById("difficulty").value;
 
-	if (JSON.parse(localStorage.getItem("signedIn")).ORG) {
-
-
-	}
 
 	let data = {
 
+		"id": "INCREMENT",
 		'Name': oppName,
 		'Organization': JSON.parse(localStorage.getItem("signedIn")).Name,
 		'Skills': skillsReq,
-		'Hours': password,
-		'Type': type
+		'Hours': numHours,
+		'Description': description,
+		"Difficulty": difficulty
 
 	}
 	console.log(data)
@@ -31,11 +37,17 @@ function submitOpp(e) {
 		body: JSON.stringify({
 			data: [
 				data
-			]
+			],
+			sheet: "Opportunities"
 		})
 	})
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
+			redirect();
 		});
+}
+
+function redirect() {
+	document.location.pathname = "/home/home.html"
 }

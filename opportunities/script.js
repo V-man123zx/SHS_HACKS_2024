@@ -8,71 +8,79 @@ searchElement.addEventListener("keydown", (e) => {
 const submitForm = () => {
 }
 
-let allOpps;
-
 const fetchData = () => {
 	fetch('https://sheetdb.io/api/v1/pixujfe3e8d9d?sheet=Opportunities')
 		.then((response) => response.json())
-		.then((data) => {
-			console.log(data);
-			allOpps = data;
-			alert(allOpps);
+		.then((data) => myFunc(data));
+}
+// fetchData(); // UNCOMMENT BEFORE RELEASE
+
+const myFunc = (data) => {
+	allOpps = data;
+
+	let op_list = allOpps;
+
+	console.log("test log", op_list);
+
+	op_list.forEach((op, index) => {
+		console.log(op.Organization);
+		opportunitiesList.innerHTML += `
+		<a class="opp" href="../volunteer_info/info.html">
+			<div id="op-${index}" class="opportunity fade-in" >
+				<h1>${op.Organization}</h1>
+				<h2>Name: ${op.Name} hours</h2>
+				<h2>Hours: ${op.Hours} hours</h2>
+				<p>Difficulty Level: ${op.Difficulty}</p>
+				<p>Required Skills: ${op.Skills}</p>
+				<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
+			</div>
+		</a>
+		`;
+
+		document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
+
+		// Add event listener to each opportunity container to display message on hover
+		document.getElementById(`op-${index}`).addEventListener('mouseover', () => {
+			document.getElementById(`op-${index}`).classList.add('hovered');
 		});
+	
+		document.getElementById(`op-${index}`).addEventListener('mouseout', () => {
+			document.getElementById(`op-${index}`).classList.remove('hovered');
+		});
+	});
 }
 
 
-let op_list = [
-	{
-		id: "1",
-		title: "Tutor Middle Schoolers",
-		hours: "2-4 hours per week",
-		description: "Tutor students for education"
-	},
-	{
-		id: "2",
-		title: "Make Advertisement Video for UNICEF",
-		hours: "1-2 hours",
-		description: "Spread awareness"
-	},
-	{
-		id: "3",
-		title: "Improve Website for ANGAZA Center",
-		hours: "5 hours",
-		description: "Spread awareness"
-	},
-	{
-		id: "4",
-		title: "Draw an Improved Logo for SALT",
-		hours: "2 hours",
-		description: "Spread awareness"
-	}
+
+// [
+// 	{
+// 		id: "1",
+// 		title: "Tutor Middle Schoolers",
+// 		hours: "2-4 hours per week",
+// 		description: "Tutor students for education"
+// 	},
+// 	{
+// 		id: "2",
+// 		title: "Make Advertisement Video for UNICEF",
+// 		hours: "1-2 hours",
+// 		description: "Spread awareness"
+// 	},
+// 	{
+// 		id: "3",
+// 		title: "Improve Website for ANGAZA Center",
+// 		hours: "5 hours",
+// 		description: "Spread awareness"
+// 	},
+// 	{
+// 		id: "4",
+// 		title: "Draw an Improved Logo for SALT",
+// 		hours: "2 hours",
+// 		description: "Spread awareness"
+// 	}
+//]; // get this somehow from the user or something
 
 
-]; // get this somehow from the user or something
 
-op_list.forEach((op, index) => {
-	opportunitiesList.innerHTML += `
-    <a class="opp" href="../volunteer_info/info.html">
-        <div id="op-${index}" class="opportunity fade-in" >
-            <h1>${op.title}</h1>
-            <h2>Hours: ${op.hours}</h2>
-            <p>${op.description}</p>
-            <a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
-        </div>
-    </a>
-    `;
-
-	document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
-
-	// Add event listener to each opportunity container to display message on hover
-	document.getElementById(`op-${index}`).addEventListener('mouseover', () => {
-		document.getElementById(`op-${index}`).classList.add('hovered');
-	});
-
-	document.getElementById(`op-${index}`).addEventListener('mouseout', () => {
-		document.getElementById(`op-${index}`).classList.remove('hovered');
-	});
-});
 
 
 //scroll button

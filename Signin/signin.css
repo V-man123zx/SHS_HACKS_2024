@@ -52,3 +52,33 @@ body {
 .btn:hover {
 	background-color: #0051b3;
 }
+
+.role {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 6px;
+	margin-bottom: 15px;
+}
+
+.role div {
+	display: flex;
+}
+
+.big-container {
+	display: grid;
+	grid-auto-flow: row;
+	place-items: center;
+	margin:auto;
+}
+
+.logo-container {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	margin:auto;
+}
+
+.logo {
+	width: 64px;
+	aspect-ratio: 1 / 1;
+	margin:auto;
+}

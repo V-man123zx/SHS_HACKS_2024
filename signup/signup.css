@@ -63,3 +63,19 @@ body {
 .role div {
 	display: flex;
 }
+
+.big-container {
+	display: grid;
+	grid-auto-flow: row;
+	place-items: center;
+}
+
+.logo-container {
+	display: grid;
+	grid-template-columns: max-content max-content;
+}
+
+.logo {
+	width: 64px;
+	aspect-ratio: 1 / 1;
+}
