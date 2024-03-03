@@ -5,9 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Questify</title>
-	<link rel="favicon" href="https://i.ibb.co/rGg0cJd/Untitled-design.png">
 	<link rel="stylesheet" href="../header.css">
 	<link rel="stylesheet" href="./organization-stylesheet.css">
+	<link rel="icon"
+		href="https://cdn.discordapp.com/attachments/1211830027151351909/1213696629706588240/Untitled-design.png?ex=65f66a11&is=65e3f511&hm=bc6013f998b411fe6b8280abc77956f74cfc4ed5288a4790cec50508fa5ace60&"
+		type="image/x-icon">
 </head>
 
 <body>
@@ -17,12 +19,12 @@
 		</a>
 		<nav>
 			<a class="page" href="../opportunities/organization.html">Opportunities</a>
-			<a class="page" href="../User_Profile/profile.html">Profile</a>
+			<a class="page" href="../userprofile/profile.html">Profile</a>
 			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
 			<a class="page" href="../organization/organization.html">Organization</a>
 		</nav>
 		<div style="display: flex;">
-			<a href="../sign-up/signUp.html">
+			<a href="../signup/signup.html">
 				<button class="signup-signin-btn">Sign Up</button>
 			</a>
 			<a href="../signIn/signin.html">
@@ -32,7 +34,7 @@
 
 	</header>
 	<br>
-	<div style="margin-left: 50px">
+	<div style="text-align: center; color: white; margin-top: 20px">
 		<h2 id="heading">This is where you can post an opportunity for volunteers to join</h2>
 		<p>Please keep expactations reasonable, keep in mind that volunteers are not compensated for their work!
 	</div>
@@ -43,7 +45,7 @@
 
 	<div id="formContainer">
 		<h2 id="formHead">Sign up:</h2>
-		<form id="form" action="#" method="post">
+		<form id="form" onsubmit="submitOpp(event)">
 			<label for="opportunityName">Opportunity Name:</label>
 			<input type="text" id="opportunityName" name="opportunityName" required>
 

@@ -12,7 +12,6 @@ body {
 }
 
 #search-opportunities {
-	border-radius: 2rem;
 	outline: none;
 	border: none;
 	font-size: 24px;
@@ -117,6 +116,7 @@ body {
 }
 
 .fade-in {
+	opacity: 0;
 	animation: 800ms ease-out forwards fade;
 	overflow-y: hidden;
 }
@@ -131,4 +131,42 @@ body {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+.opportunity {
+	position: relative;
+}
+
+.opportunity::after {
+	content: "Click for more info";
+	position: absolute;
+	top: 2.5px;
+	/* Adjust as needed */
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	opacity: 0;
+	/* Initially hidden */
+	pointer-events: none;
+	/* Ensure pseudo-element doesn't interfere with mouse events */
+	transition: opacity 0.3s ease-in-out;
+}
+
+.opportunity:hover::after {
+	opacity: 1;
+	/* Display message on hover */
+}
+
+/* Optional styling for when the message is displayed */
+.opportunity.hovered::after {
+	opacity: 1;
+}
+
+.title {
+	color: #eee;
+	text-align: center;
 }

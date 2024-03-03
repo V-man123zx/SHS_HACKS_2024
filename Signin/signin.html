@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Questify Sign In</title>
 	<link rel="stylesheet" href="./signin.css">
+	<link rel="icon"
+		href="https://cdn.discordapp.com/attachments/1211830027151351909/1213696629706588240/Untitled-design.png?ex=65f66a11&is=65e3f511&hm=bc6013f998b411fe6b8280abc77956f74cfc4ed5288a4790cec50508fa5ace60&"
+		type="image/x-icon">
 </head>
 
 <body>
@@ -33,7 +36,7 @@
 		let userjson;
 
 
-		fetch(`https://sheetdb.io/api/v1/d6omx04jpy6ks/search?Email=${enteredEmail}`)
+		fetch(`https://sheetdb.io/api/v1/pixujfe3e8d9d/search?Email=${enteredEmail}`)
 			.then((response) => response.json())
 			.then((data) => {
 
@@ -53,7 +56,7 @@
 					localStorage.setItem("signedIn", JSON.stringify(userjson));
 				}
 
-				document.location.pathname = "/User_Profile/profile.html"
+				document.location.pathname = "/userprofile/profile.html"
 			});
 
 

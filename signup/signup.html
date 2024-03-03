@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sign Up</title>
 	<link rel="stylesheet" href="./signup.css">
+	<link rel="icon"
+		href="https://cdn.discordapp.com/attachments/1211830027151351909/1213696629706588240/Untitled-design.png?ex=65f66a11&is=65e3f511&hm=bc6013f998b411fe6b8280abc77956f74cfc4ed5288a4790cec50508fa5ace60&"
+		type="image/x-icon">
 </head>
 
 <body>
@@ -35,7 +38,7 @@
 				</div>
 			</div>
 			<button type="submit" class="btn">Sign Up</button>
-			<a href="../Signin/signin.html" style="margin: auto;">
+			<a href="../signin/signin.html" style="margin: auto;">
 				<p style="text-align: center;">
 					Already have an account?
 					Sign in here
@@ -57,7 +60,8 @@
 				'Name': name,
 				'Email': email,
 				'Password': password,
-				'Type': type
+				'Type': type,
+				'Hours': 0
 			};
 
 			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {

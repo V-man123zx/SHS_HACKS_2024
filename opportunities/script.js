@@ -6,8 +6,20 @@ searchElement.addEventListener("keydown", (e) => {
 })
 
 const submitForm = () => {
-		
 }
+
+let allOpps;
+
+const fetchData = () => {
+	fetch('https://sheetdb.io/api/v1/pixujfe3e8d9d?sheet=Opportunities')
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data);
+			allOpps = data;
+			alert(allOpps);
+		});
+}
+
 
 let op_list = [
 	{
@@ -24,13 +36,13 @@ let op_list = [
 	},
 	{
 		id: "3",
-		title:"Improve Website for ANGAZA Center",
+		title: "Improve Website for ANGAZA Center",
 		hours: "5 hours",
 		description: "Spread awareness"
 	},
 	{
-		id:"4",
-		title:"Draw an Improved Logo for SALT",
+		id: "4",
+		title: "Draw an Improved Logo for SALT",
 		hours: "2 hours",
 		description: "Spread awareness"
 	}
@@ -40,24 +52,33 @@ let op_list = [
 
 op_list.forEach((op, index) => {
 	opportunitiesList.innerHTML += `
+    <a class="opp" href="../volunteer_info/info.html">
+        <div id="op-${index}" class="opportunity fade-in" >
+            <h1>${op.title}</h1>
+            <h2>Hours: ${op.hours}</h2>
+            <p>${op.description}</p>
+            <a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
+        </div>
+    </a>
+    `;
 
-	<a class="opp" href="../volunteer_info/info.html">
-	<div id="op-${index}" class="opportunity fade-in" >
-	<h1>${op.title}</h1>
-	<h2>Hours: ${op.hours}</h2>
-	<p>${op.description}</p>
-	<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
-	</div>
-	<a>
-	`
+	document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
 
-	document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`
+	// Add event listener to each opportunity container to display message on hover
+	document.getElementById(`op-${index}`).addEventListener('mouseover', () => {
+		document.getElementById(`op-${index}`).classList.add('hovered');
+	});
+
+	document.getElementById(`op-${index}`).addEventListener('mouseout', () => {
+		document.getElementById(`op-${index}`).classList.remove('hovered');
+	});
 });
+
 
 //scroll button
 // WE ARE NOT DOING A SCROLL BUTT
-window.onscroll = function() {
-	// scrollFunction();
+window.onscroll = function () {
+	scrollFunction();
 };
 
 function scrollFunction() {
