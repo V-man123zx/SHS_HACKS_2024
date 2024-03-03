@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h2>Sign Up</h2>
-		<form onsubmit="sheetsdb_signin()">
+		<form onsubmit="sheetsdb_signin(event)">
 			<div class="form-group">
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
@@ -27,11 +27,11 @@
 			<div class="role">
 				<div>
 					<label for="volunteer">Volunteer</label><br>
-					<input type="radio" id="volunteer" name="role" value="volunteer">
+					<input type="radio" id="volunteer" name="role" value="volunteer" required>
 				</div>
 				<div>
 					<label for="organization">Organization</label>
-					<input type="radio" id="organization" name="role" value="organization">
+					<input type="radio" id="organization" name="role" value="organization" required>
 				</div>
 			</div>
 			<button type="submit" class="btn">Sign Up</button>
@@ -44,15 +44,21 @@
 		</form>
 	</div>
 	<script>
-
-		function sheetsdb_signin() {
-			console.log("efefe")
+		function sheetsdb_signin(e) {
+			e.preventDefault();
 			let name = document.getElementById("name").value;
 			let email = document.getElementById("email").value;
 			let password = document.getElementById("password").value;
 			let type;
 			if (document.getElementById("volunteer").checked) { type = "VOL" }
 			else if (document.getElementById("organization").checked) { type = "ORG" }
+
+			let data = {
+				'Name': name,
+				'Email': email,
+				'Password': password,
+				'Type': type
+			};
 
 			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {
 				method: 'POST',
@@ -62,19 +68,16 @@
 				},
 				body: JSON.stringify({
 					data: [
-						{
-							'id': "INCREMENT",
-							'Name': name,
-							'Email': email,
-							'Password': password,
-							'Type': type
-						}
+						data
 					]
 				})
 			})
 				.then((response) => response.json())
-				.then((data) => { console.log(data); redirect() });
-
+				.then((data) => {
+					console.log(data);
+					console.log(data[0]);
+					localStorage.setItem("signedIn", data);
+				});
 		}
 
 		function uncheck(id) {
@@ -82,10 +85,8 @@
 		}
 
 		function redirect() {
-			console.log("redirect pressed")
 			document.location.pathname = "/opportunities/organization.html"
 		}
-
 	</script>
 
 </body>

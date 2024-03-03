@@ -21,9 +21,14 @@
 			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
 			<a class="page" href="../organization/organization.html">Organization</a>
 		</nav>
-		<a href="../sign-up/signUp.html">
-			<button class="signup-signin-btn">Sign Up / Sign In</button>
-		</a>
+		<div style="display: flex;">
+			<a href="../sign-up/signUp.html">
+				<button class="signup-signin-btn">Sign Up</button>
+			</a>
+			<a href="../signIn/signin.html">
+				<button class="signup-signin-btn">Sign In</button>
+			</a>
+		</div>
 
 	</header>
 
@@ -33,28 +38,31 @@
 
 	<div class="profile-container">
 		<h2>User Profile</h2>
+
+		<div class="form-group">
+			<label for="username">Username: <span id="username">ttext</span></label>
+		</div>
+		<div class="form-group">
+			<label for="email">Email: <span id="email">ttext</span></label>
+		</div>
+		<div class="form-group">
+			<label for="email">Volunteer Hours: <span id="hours">ttext</span></label>
+		</div>
+
+
 		<form id="profile-form">
 			<div class="form-group">
-				<label for="username">Username:</label>
-			</div>
-			<div class="form-group">
-				<label for="email">Email:</label>
-			</div>
-			<div class="form-group">
-				<label for="email">Volunteer Hour(s):</label>
-			</div>
-
-
-
-			<div class="form-group">
 				<label for="username">About me:</label>
-				<textarea type="text" id="bio" name="bio" rows="10" cols="70">
+				<textarea type="text" id="bio" name="bio" rows="10" cols="70"></textarea>
 			</div>
 			<div>
-				<button type="submit">Save Changes</button>
+				<button type="submit" id="save">Save Changes</button>
 			</div>
+			<!-- <button type="submit" class="btn">Sign Up</button> -->
 		</form>
+
 	</div>
 </body>
+<script src='index.js'></script>
 
 </html>

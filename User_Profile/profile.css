@@ -22,6 +22,10 @@
 	font-weight: bold;
 }
 
+.form-group span {
+	font-weight: normal;
+}
+
 .form-group input {
 	width: 100%;
 	padding: 8px;
@@ -36,6 +40,20 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+#save {
+	border-radius: 5;
+	background-color: #0074D9;
+	color: #ffffff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#save:hover {
+	background-color: #0056b3;
 }
 
 textarea {

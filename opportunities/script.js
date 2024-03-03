@@ -38,21 +38,26 @@ let op_list = [
 
 ]; // get this somehow from the user or something
 
-op_list.forEach(op => {
+op_list.forEach((op, index) => {
 	opportunitiesList.innerHTML += `
-	<a class="opportunity" href="/opportunities/index.html?id=${op.id}">
+
+	<a class="opp" href="../volunteer_info/info.html">
+	<div id="op-${index}" class="opportunity fade-in" >
 	<h1>${op.title}</h1>
 	<h2>Hours: ${op.hours}</h2>
 	<p>${op.description}</p>
-	<button class="btn"> Sign Up </button>
-	</a>
-	`	
+	<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
+	</div>
+	<a>
+	`
+
+	document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`
 });
 
 //scroll button
-
+// WE ARE NOT DOING A SCROLL BUTT
 window.onscroll = function() {
-	scrollFunction();
+	// scrollFunction();
 };
 
 function scrollFunction() {

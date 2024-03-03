@@ -11,8 +11,8 @@
 <body>
 	<div class="container">
 		<h2>Sign In</h2>
-		<form onsubmit="signIn()">
-			<div class="form-group">
+		<form onsubmit="signIn(event)">
+			<div class=" form-group">
 				<label for="email">Email:</label>
 				<input type="email" id="email" name="email" required>
 			</div>
@@ -26,19 +26,37 @@
 </body>
 
 <script>
-	function signIn() {
+	function signIn(e) {
+		e.preventDefault();
 		const enteredPasssword = document.getElementById("password").value;
 		const enteredEmail = document.getElementById("email").value
+		let userjson;
 
-		console.log("lsadfsdfsadfsadf")
 
-		fetch(`https://sheetdb.io/api/v1/d6omx04jpy6ks/search?Email=` + enteredEmail)
+		fetch(`https://sheetdb.io/api/v1/d6omx04jpy6ks/search?Email=${enteredEmail}`)
 			.then((response) => response.json())
 			.then((data) => {
-				userjson = data;
+
+				if (data == []) {
+					alert("invalid");
+				}
+
+				userjson = data[0];
+
 				console.log(userjson);
-				alert(JSON.stringify(userjson))
+				console.log(userjson.Password, enteredPasssword, userjson.Password === enteredPasssword);
+				// alert(JSON.stringify(userjson));
+
+				if (userjson.Password == enteredPasssword) {
+					console.log("works", userjson);
+
+					localStorage.setItem("signedIn", JSON.stringify(userjson));
+				}
+
+				document.location.pathname = "/User_Profile/profile.html"
 			});
+
+
 	}
 </script>
 
