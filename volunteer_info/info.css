@@ -45,3 +45,14 @@ h1 {
 .apply-btn:hover {
 	background-color: #0056b3;
 }
+
+input[type="text"],
+input[type="number"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: none;
+}

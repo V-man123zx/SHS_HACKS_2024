@@ -24,14 +24,15 @@ searchElement.addEventListener("keydown", (e) => {
 	uniqueArray.forEach((op, index) => {
 		console.log(op.Organization);
 		opportunitiesList.innerHTML += `
-			<div onclick="openOpp(${op})" id="op-${index}" class="opportunity fade-in">
+		<a href="/volunteer_info/info.html?id=${op.id}">
+			<div id="op-${index}" class="opportunity fade-in">
 				<h1>${op.Organization}</h1>
 				<h2>Name: ${op.Name} hours</h2>
 				<h2>Hours: ${op.Hours} hours</h2>
 				<p>Difficulty Level: ${op.Difficulty}</p>
 				<p>Required Skills: ${op.Skills}</p>
-				<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
 			</div>
+		</a>
 		`;
 
 		document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
@@ -51,7 +52,7 @@ const submitForm = () => {
 }
 
 const fetchData = () => {
-	fetch('https://sheetdb.io/api/v1/pixujfe3e8d9d?sheet=Opportunities')
+	fetch('https://sheetdb.io/api/v1/j704fmwyomm3h?sheet=Opportunities')
 		.then((response) => response.json())
 		.then((data) => myFunc(data));
 }
@@ -68,15 +69,17 @@ const myFunc = (data) => {
 
 	op_list.forEach((op, index) => {
 		console.log(op.Organization);
+
 		opportunitiesList.innerHTML += `
-			<div onclick="openOpp(${op})" id="op-${index}" class="opportunity fade-in">
+		<a href="/volunteer_info/info.html?id=${op.id}">
+			<div id="op-${index}" class="opportunity fade-in">
 				<h1>${op.Organization}</h1>
 				<h2>Name: ${op.Name} hours</h2>
 				<h2>Hours: ${op.Hours} hours</h2>
 				<p>Difficulty Level: ${op.Difficulty}</p>
 				<p>Required Skills: ${op.Skills}</p>
-				<a class="btn" href="/opportunities/index.html?id=${op.id}">Sign Up</a>
 			</div>
+		</a>
 		`;
 
 		document.getElementById(`op-${index}`).style.animationDelay = `${index * 100}ms`;
@@ -92,9 +95,11 @@ const myFunc = (data) => {
 	});
 }
 
-const openOpp = (op) => {
-	console.log("open", op)
-} 
+// const openOpp = (op) => {
+// 	console.log("openopp", op)
+
+// 	document.location.pathname = `/volunteer_info/info.html?id=${op.id}`
+// }
 
 
 

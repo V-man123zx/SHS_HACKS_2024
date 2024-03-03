@@ -23,7 +23,17 @@ header {
 	/* Adjust as needed */
 	height: auto;
 	margin-left: 10px;
+	
+ }
+  
+.logo:hover {
+	/* rotate: 360deg; */
+	transition-duration: 350ms;
+	transition-timing-function: ease-in-out;
+	transform: rotate(360deg);
+	a
 }
+  
 
 nav {
 	display: flex;
@@ -63,6 +73,7 @@ nav a {
 
 .page:hover {
 	text-decoration: underline;
+	
 }
 
 .logo img {

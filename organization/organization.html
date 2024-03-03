@@ -10,6 +10,7 @@
 	<link rel="icon"
 		href="https://cdn.discordapp.com/attachments/1211830027151351909/1213696629706588240/Untitled-design.png?ex=65f66a11&is=65e3f511&hm=bc6013f998b411fe6b8280abc77956f74cfc4ed5288a4790cec50508fa5ace60&"
 		type="image/x-icon">
+	<script src='index.js'></script>
 </head>
 
 <body>
@@ -21,14 +22,11 @@
 			<a class="page" href="../opportunities/organization.html">Opportunities</a>
 			<a class="page" href="../userprofile/profile.html">Profile</a>
 			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
-			<a class="page" href="../organization/organization.html">Organization</a>
+			<a class="page" href="../organization/organization.html">Add Opportunity</a>
 		</nav>
 		<div style="display: flex;">
-			<a href="../signup/signup.html">
-				<button class="signup-signin-btn">Sign Up</button>
-			</a>
-			<a href="../signIn/signin.html">
-				<button class="signup-signin-btn">Sign In</button>
+			<a>
+				<button onclick="logout()"class="signup-signin-btn">Log out</button>
 			</a>
 		</div>
 
@@ -44,7 +42,7 @@
 		<br>
 
 	<div id="formContainer">
-		<h2 id="formHead">Sign up:</h2>
+		<h2 id="formHead">Add Opportunity:</h2>
 		<form id="form" onsubmit="submitOpp(event)">
 			<label for="opportunityName">Opportunity Name:</label>
 			<input type="text" id="opportunityName" name="opportunityName" required>
@@ -70,7 +68,7 @@
 	</div>
 
 </body>
-<script src='index.js'></script>
+
 
 
 </html>

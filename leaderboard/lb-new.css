@@ -1,0 +1,110 @@
+#leaderboard-podium {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    
+    /* margin:auto; */
+}
+
+
+#leaderboard-podium * {
+    font-size: 30px;
+    width: 80%;
+    margin-top: auto !important;
+    margin-left:auto;
+    margin-right:auto;
+    color: rgb(0, 0, 0);
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: auto !important;
+
+
+}
+
+#leaderboard-grid {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin:auto;
+    justify-content: center; 
+    align-items: center; /* Vertically center the leaderboard */
+    
+    
+}
+
+#leaderboard-grid * {
+    text-align: center;
+   
+    background-color: aliceblue;
+    border-radius: 5px;
+    outline: 2px black;
+    /* background: linear-gradient(to bottom right, #ffd700, #ffa500);  */
+    color: black; /* Black text */
+    font-family: Arial, sans-serif;
+    padding: 10px; /* Add padding to each element */
+    margin: 5px; /* Add margin between elements */
+    width:50%
+    
+    
+    
+
+
+}
+
+
+#leaderboard-grid * {
+    flex: 1; 
+}
+
+
+#lbpodium-0 {
+    margin-top: 0px;
+    color: rgb(0, 0, 0);
+    background-color: gold;
+    height: 200px;
+    grid-column: 2;
+    background-image: url("https://i.ibb.co/9pk9RNX/Designer-removebg-preview.png");
+    background-size:175px;
+    background-position: center;
+    background-position-y: 30px;
+    /* background-position: 0%; */
+    background-repeat: no-repeat;
+    grid-row: 1;
+}
+
+#lbpodium-1 {
+    margin-top: 0px;
+    color: rgb(0, 0, 0);
+    height: 150px;
+    background-color:#c0c0c0;
+    grid-column: 1;
+    grid-row: 1;
+    background-image: url("https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/1024px/1f948.png");
+    background-size:120px;
+    background-position: center;
+    background-position-y: 30px;
+    /* background-position: 0%; */
+    background-repeat: no-repeat;
+}
+
+#lbpodium-2 {
+    
+    color: white;
+    height: 100px;
+    background-color: rgb(214, 134, 14);
+    grid-row: 1;
+    grid-column: 3;
+    background-image: url("https://static-00.iconduck.com/assets.00/bronze-medal-icon-770x1024-6dgvwtsr.png");
+    background-size:50px;
+    background-position: center;
+    background-position-y: 40px;
+    /* background-position: 0%; */
+    background-repeat: no-repeat;
+    
+}
+
+#heading{
+    color:white
+}
+

@@ -43,7 +43,7 @@
 		let userjson;
 
 
-		fetch(`https://sheetdb.io/api/v1/pixujfe3e8d9d/search?Email=${enteredEmail}`)
+		fetch(`https://sheetdb.io/api/v1/j704fmwyomm3h/search?Email=${enteredEmail}`)
 			.then((response) => response.json())
 			.then((data) => {
 
@@ -61,11 +61,15 @@
 					console.log("works", userjson);
 
 					localStorage.setItem("signedIn", JSON.stringify(userjson));
+					document.location.pathname = "/userprofile/profile.html"
+				}
+				else {
+					alert("Invalid Password")
 				}
 
-				document.location.pathname = "/userprofile/profile.html"
+				
 			});
-
+			
 
 	}
 </script>

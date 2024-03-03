@@ -75,7 +75,9 @@
 				'Hours': 0
 			};
 
-			fetch('https://sheetdb.io/api/v1/d6omx04jpy6ks', {
+			localStorage.setItem("signedIn", JSON.stringify(data));
+
+			fetch('https://sheetdb.io/api/v1/j704fmwyomm3h', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -91,8 +93,9 @@
 				.then((data) => {
 					console.log(data);
 					console.log(data[0]);
-					localStorage.setItem("signedIn", data);
+					
 				});
+			redirect();
 		}
 
 		function uncheck(id) {
@@ -100,7 +103,7 @@
 		}
 
 		function redirect() {
-			document.location.pathname = "/opportunities/organization.html"
+			document.location.pathname = "/userprofile/profile.html"
 		}
 	</script>
 

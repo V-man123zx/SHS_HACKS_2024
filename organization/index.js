@@ -1,3 +1,15 @@
+console.log(localStorage.getItem("signedIn"))
+
+if (localStorage.getItem("signedIn") == null || JSON.parse(localStorage.getItem("signedIn")).Type != "ORG") {
+	alert("Please sign up or login to organization account.");
+
+	redirect();
+}
+
+function logout() {
+	localStorage.removeItem("signedIn")
+	redirect();
+}
 function submitOpp(e) {
 	e.preventDefault();
 
@@ -28,7 +40,7 @@ function submitOpp(e) {
 	}
 	console.log(data)
 
-	fetch('https://sheetdb.io/api/v1/pixujfe3e8d9d', {
+	fetch('https://sheetdb.io/api/v1/j704fmwyomm3h', {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',

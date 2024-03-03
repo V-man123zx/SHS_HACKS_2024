@@ -58,12 +58,7 @@
 		var(--clr-5));
 	animation: rotation 20s linear infinite;
 	/* border-radius: inherit; */
-} */
 
-@keyframes rotation{
-	0% { --gradient-angle:0deg;}
-	100% {--gradient-angle:360deg;}
-}
 :root {
 	--clr-1: rgb(255, 208, 0);
 	--clr-2: rgb(255, 208, 0);
@@ -75,7 +70,7 @@
 	--clr-8: rgb(0, 162, 255); */
   }
   
-  #leaderboard-grid div:nth-child(1) {
+  #lb-podium-1 {
 	z-index: 2;
 	
 	background-color: var(--clr-1);
@@ -86,18 +81,20 @@
 
 }
   
-  #leaderboard-grid div:nth-child(1)::before {
-	/* z-index=1; */
+#leaderboard-grid div:nth-child(1)::before {
 	filter: blur(1rem);
 	z-index: 1;
 	background-color: goldenrod;
 	content: "";
 	inset: 0;
 	position: absolute;
-	opacity: 70%;
-	
-	
-	
+	opacity: 0.7; /* Corrected opacity value */
+	transition-duration: 200ms;
+  }
+  
+  #leaderboard-grid div:nth-child(1):hover::before {
+	opacity: 1;
+	filter: blur(1.5rem);
   }
 
 
@@ -113,16 +110,7 @@
 	font-size: 30px;
 }
 
-/* :root{
-	--clr-1: blue;
-	--clr-2: rgb(76, 0, 255);
-	--clr-2: rgb(79, 0, 111);
-	--clr-3: rgb(255, 0, 200);
-	--clr-4: rgb(117, 5, 192);
-	--clr-5: rgb(0, 102, 255);
-	/* --clr-6: blue;
-	--clr-7: rgb(0, 162, 255); */
-} */
+
 
 #leaderboard-grid div{
 	margin-left: 10px;

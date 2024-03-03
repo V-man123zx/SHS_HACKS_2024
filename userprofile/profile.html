@@ -22,15 +22,13 @@
 			<a class="page" href="../opportunities/organization.html">Opportunities</a>
 			<a class="page" href="../userprofile/profile.html">Profile</a>
 			<a class="page" href="../leaderboard/leaderboard.html">Leaderboard</a>
-			<a class="page" href="../organization/organization.html">Organization</a>
+			<a class="page" href="../organization/organization.html">Add Opportunity</a>
 		</nav>
 		<div style="display: flex;">
-			<a href="../signup/signup.html">
-				<button class="signup-signin-btn">Sign Up</button>
+			<a">
+				<button onclick="logout()"class="signup-signin-btn">Log out</button>
 			</a>
-			<a href="../signIn/signin.html">
-				<button class="signup-signin-btn">Sign In</button>
-			</a>
+
 		</div>
 
 	</header>
@@ -51,15 +49,18 @@
 		<div class="form-group">
 			<label for="email">Volunteer Hours: <span id="hours">ttext</span></label>
 		</div>
+		<div class="form-group">
+			<label for="Bio">Current Bio: <span id="aboutme">ttext</span></label>
+		</div>
 
 
 		<form id="profile-form" onsubmit="event.preventDefault()">
 			<div class="form-group">
 				<label for="username">About me:</label>
-				<textarea type="text" id="bio" name="bio" rows="10" cols="70"></textarea>
+				<textarea type="text" id="bioform" name="bio" rows="10" cols="70"></textarea>
 			</div>
 			<div>
-				<button type="submit" id="save">Save Changes</button>
+				<button onclick="submitbio()" type="submit" id="save">Save Changes</button>
 			</div>
 			<!-- <button type="submit" class="btn">Sign Up</button> -->
 		</form>
