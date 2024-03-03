@@ -31,7 +31,6 @@ header {
 	transition-duration: 350ms;
 	transition-timing-function: ease-in-out;
 	transform: rotate(360deg);
-	a
 }
   
 
@@ -58,6 +57,7 @@ nav a {
 	border-radius: 5px;
 	cursor: pointer;
 	margin-right: 15px;
+	
 }
 
 .signup-signin-btn:hover {

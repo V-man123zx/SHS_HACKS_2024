@@ -41,23 +41,23 @@
 		<h2>User Profile</h2>
 
 		<div class="form-group">
-			<label for="username">Username: <span id="username">ttext</span></label>
+			<label for="username">Username: <span id="username"></span></label>
 		</div>
 		<div class="form-group">
-			<label for="email">Email: <span id="email">ttext</span></label>
+			<label for="email">Email: <span id="email"></span></label>
 		</div>
 		<div class="form-group">
-			<label for="email">Volunteer Hours: <span id="hours">ttext</span></label>
+			<label for="email">Volunteer Hours: <span id="hours"></span></label>
 		</div>
 		<div class="form-group">
-			<label for="Bio">Current Bio: <span id="aboutme">ttext</span></label>
+			<label for="Bio">Current Bio: <span id="aboutme"></span></label>
 		</div>
 
 
 		<form id="profile-form" onsubmit="event.preventDefault()">
 			<div class="form-group">
 				<label for="username">About me:</label>
-				<textarea type="text" id="bioform" name="bio" rows="10" cols="70"></textarea>
+				<textarea type="text" id="bioform" name="bio" rows="10"></textarea>
 			</div>
 			<div>
 				<button onclick="submitbio()" type="submit" id="save">Save Changes</button>

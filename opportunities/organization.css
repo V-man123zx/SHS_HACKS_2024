@@ -9,10 +9,13 @@ body {
 	width: 100%;
 	place-items: center;
 	padding-bottom: 10px;
+
+
 }
 
 #search-opportunities {
-	outline: none;
+	text-decoration: none;
+	outline: 0px;
 	border: none;
 	font-size: 24px;
 }
@@ -21,7 +24,8 @@ body {
 	display: grid;
 	grid-auto-flow: row;
 	grid-gap: 10px;
-	width: 80%
+	width: 80%;
+	transition: transform 0.3s ease-in-out;
 }
 
 .opportunity {
@@ -169,4 +173,7 @@ body {
 .title {
 	color: #eee;
 	text-align: center;
+}
+a {
+    text-decoration: none;
 }

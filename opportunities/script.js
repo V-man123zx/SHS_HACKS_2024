@@ -52,11 +52,12 @@ const submitForm = () => {
 }
 
 const fetchData = () => {
-	fetch('https://sheetdb.io/api/v1/j704fmwyomm3h?sheet=Opportunities')
+	console.log("test")
+	fetch('https://sheetdb.io/api/v1/jm4i51saoegqh?sheet=Opportunities')
 		.then((response) => response.json())
 		.then((data) => myFunc(data));
 }
-// fetchData(); // UNCOMMENT BEFORE RELEASE
+fetchData(); // UNCOMMENT BEFORE RELEASE
 
 const myFunc = (data) => {
 	allOpps = data;

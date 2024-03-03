@@ -54,6 +54,7 @@ body {
 	line-height: 1.4;
 	background-color: white;
 	z-index: 1;
+	transition: font-size 0.3s ease-in-out; 
 }
 .mission:hover{
     font-size: 20px; /* Increase font size on hover */

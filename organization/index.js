@@ -28,7 +28,6 @@ function submitOpp(e) {
 
 
 	let data = {
-
 		"id": "INCREMENT",
 		'Name': oppName,
 		'Organization': JSON.parse(localStorage.getItem("signedIn")).Name,
@@ -36,11 +35,11 @@ function submitOpp(e) {
 		'Hours': numHours,
 		'Description': description,
 		"Difficulty": difficulty
-
 	}
+
 	console.log(data)
 
-	fetch('https://sheetdb.io/api/v1/j704fmwyomm3h', {
+	fetch('https://sheetdb.io/api/v1/jm4i51saoegqh', {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',

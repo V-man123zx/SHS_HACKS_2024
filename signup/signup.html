@@ -75,9 +75,11 @@
 				'Hours': 0
 			};
 
-			localStorage.setItem("signedIn", JSON.stringify(data));
+			console.log(data);
 
-			fetch('https://sheetdb.io/api/v1/j704fmwyomm3h', {
+			
+
+			fetch('https://sheetdb.io/api/v1/jm4i51saoegqh', {
 				method: 'POST',
 				headers: {
 					'Accept': 'application/json',
@@ -95,6 +97,7 @@
 					console.log(data[0]);
 					
 				});
+			localStorage.setItem("signedIn", JSON.stringify(data));
 			redirect();
 		}
 
