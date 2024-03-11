@@ -1,7 +1,8 @@
-# QUESTIFY
+# QUESTIFY SHSHACKS 2024: 3rd Place
 
 
-DO NOT USE GITHUB PAGES CURRENT BUG PENDING FIX!!
-Github pages link: https://v-man123zx.github.io/SHS_HACKS_2024/home/home.html
+Hosted here: https://65ef5fa575301b094eb5e8ef--dazzling-jelly-ba9e11.netlify.app/home/home.html 
 
-clone or download the repository and open /home/home.html in your browser
+clone or download the repository and open /home/home.html in your browser to run locally
+
+
